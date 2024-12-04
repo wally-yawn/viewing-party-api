@@ -42,3 +42,4 @@ module ViewingPartyApi
     config.api_only = true
   end
 end
+config.api_only = false
