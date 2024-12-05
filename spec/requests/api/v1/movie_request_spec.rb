@@ -4,7 +4,7 @@ RSpec.describe "Movies API" do
   describe "top_movies" do
     it "gets the top movies" do
       VCR.use_cassette("top_20_movie_search") do
-        get api_v1_movies_path
+        get api_v1_top_movies_path
       end
 
       expect(response).to be_successful
