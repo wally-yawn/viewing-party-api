@@ -32,7 +32,7 @@ RSpec.describe "Movies API" do
 
     it "returns an error if the keyword is not supplied" do
       search_params = { keyword: nil}
-      get "/api/v1/top_movies/search", params:{keyword: search_params}
+      get "/api/v1/top_movies/search", params:{}
       
       expect(response.status).to eq(400)
       expect(JSON.parse(response.body)).to eq({ "error" => "param is missing or the value is empty: keyword" })
