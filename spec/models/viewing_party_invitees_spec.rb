@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe ViewingPartyInvitees, type: :model do
+RSpec.describe ViewingPartyInvitee, type: :model do
   describe 'relationships' do
-    it { should have_many :users}
-    it { should have_many :viewing_partys}
+    it { should belong_to :user}
+    it { should belong_to :viewing_party}
   end
 end
