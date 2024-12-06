@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         resources :search, only: :index
       end
       resources :top_movies, only: :index
+      resources :viewing_party, only: :post
     end
   end
 end
