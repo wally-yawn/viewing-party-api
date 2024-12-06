@@ -4,13 +4,20 @@ class MovieGateway
     Faraday.new(url: "https://api.themoviedb.org/")
   end
 
-  def self.get_top_20_movies(params = nil) 
-    if params != nil && params.has_key?("keywords")
-      response = conn.get("3/search/movie", { query: params[:keywords], api_key: Rails.application.credentials.tmdb[:key] })
-    else
-      response = conn.get("3/discover/movie", { query: "sort_by", api_key: Rails.application.credentials.tmdb[:key] })
-    end
+  def self.get_top_20_movies
+    response = conn.get("3/discover/movie", { query: "sort_by=popularity.desc", api_key: Rails.application.credentials.tmdb[:key] })
+    return_movies(response)
 
+  end
+
+  def self.search_movies(params)
+    response = conn.get("3/search/movie", { query: params, api_key: Rails.application.credentials.tmdb[:key] })
+    return_movies(response)
+  end
+
+  private_class_method
+
+  def self.return_movies(response)
     json = JSON.parse(response.body, symbolize_names: true)
     movies_results = json[:results].take(20)
     movies = []
@@ -19,5 +26,4 @@ class MovieGateway
     end
     movies
   end
-
 end

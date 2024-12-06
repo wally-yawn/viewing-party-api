@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 8a50fe9452625079391cf0ce7a3e0c56.cloudfront.net (CloudFront)
+      - 1.1 d898fedd2c97412525c0a8011787cf32.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - uB82uzuKZRavMxXL8hFmYQtkO01tIfp1J1HG757EnKcOwlv6IXRftg==
+      - gI00jvNtkadWej7vwSGOyT_aoMYETRlK-4o4bQf2qj0Xa9VoZvl1jA==
       Age:
-      - '774'
+      - '3776'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/zCjZfevPFBbOh2SAx2syIBHSqEI.jpg","genre_ids":[28,18,878],"id":124905,"original_language":"en","original_title":"Godzilla","overview":"Ford
@@ -155,5 +155,5 @@ http_interactions:
         and proceeds to consume pollution. Spewing mists of sulfuric acid and corrosive
         sludge, neither humanity nor Godzilla may be able to defeat this toxic menace.","popularity":12.972,"poster_path":"/sy9k4VKud71zhY4a7kaq9flptw.jpg","release_date":"1971-07-24","title":"Godzilla
         vs. Hedorah","video":false,"vote_average":6.8,"vote_count":206}],"total_pages":9,"total_results":170}'
-  recorded_at: Fri, 06 Dec 2024 16:44:51 GMT
+  recorded_at: Fri, 06 Dec 2024 17:34:53 GMT
 recorded_with: VCR 6.3.1

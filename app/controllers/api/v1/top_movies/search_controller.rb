@@ -1,8 +1,17 @@
 class Api::V1::TopMovies::SearchController < ApplicationController
-  
+  rescue_from ActionController::ParameterMissing, with: :handle_missing_keyword
+
   def index
-    # require 'pry'; binding.pry
-    movies = MovieGateway.get_top_20_movies(params)
+    movies = MovieGateway.search_movies(search_params)
     render json: MovieSerializer.format_movie_list(movies)
   end
+end
+
+private
+def search_params
+  params.require(:keyword)
+end
+
+def handle_missing_keyword(exception)
+  render json: { error: exception.message }, status: :bad_request
 end
