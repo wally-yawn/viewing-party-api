@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<TMDB_API_KEY>&query=bond
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 06 Dec 2024 17:44:14 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=8453
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9b7b4afcc6321ae8a8fd2ee44a649d85
+      X-Memc-Age:
+      - '16897'
+      X-Memc-Expires:
+      - '8453'
+      Etag:
+      - W/"732528a407938e5cd26a96e6f9059f16"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 cf7db6af8b8a86ebeb9fc938221e81da.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 4l2oXhRpWBZPcddxe2hIYwkqCgH__i7uR6QfzXqo5DUXiegPoYXrxw==
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/8NEvnVKeGMLEXG45MMNqxJLcM4y.jpg","genre_ids":[16,28,14,53],"id":820232,"original_language":"ja","original_title":"鬼滅の刃
+        兄妹の絆","overview":"A recap of Kimetsu no Yaiba episodes 1–5, with new footage
+        and special end credits. Tanjiro Kamado returns home to find his family slaughtered
+        and the lone survivor, his sister Nezuko, turned into a Demon. To his surprise,
+        however, Nezuko still shows signs of human emotion and thought. Thus begins
+        Tanjiro''s journey to seek out the Demon who killed their family and turn
+        his sister human again.","popularity":58.934,"poster_path":"/vJUDoYNNKvBqbEPUskgvzPXGEFz.jpg","release_date":"2019-03-29","title":"Demon
+        Slayer: Kimetsu no Yaiba – Sibling''s Bond","video":false,"vote_average":7.9,"vote_count":205},{"adult":false,"backdrop_path":"/8BSxCJhKfsPPWgxRFFB46ysnEgB.jpg","genre_ids":[16,14,18],"id":507411,"original_language":"ja","original_title":"劇場版
+        夏目友人帳 ～うつせみに結ぶ～","overview":"The movie of  Natsume''s Book of Friends series.\r
+        Natsume has been busy, navigating between humans and Yokai when he coincidentally
+        reunites with an old classmate, Yuki. It brings back painful memories of a
+        certain Yokai. Meanwhile, Natsume also became acquainted with Yorie Tsumura,
+        a woman in the memories of a Yokai whose name he had returned. Yorie knew
+        much about Reiko, but now lived a peaceful life with her only son, Mukuo.
+        Being with this family was comforting for Natsume, but apparently a mysterious
+        Yokai has been lurking in their town.\r On the way back from investigating,
+        a \"Yokai seed\" that had latched itself to Nyanko Sensei drops into the Fujiwaras''
+        garden and grows overnight into a fruit tree. When Nyanko Sensei eats a fruit
+        that is somehow shaped like himself, he suddenly splits into three!","popularity":38.669,"poster_path":"/5LVV47JaRHa1OXrQv5l6XSyfW50.jpg","release_date":"2018-09-29","title":"Natsume''s
+        Book of Friends: Ephemeral Bond","video":false,"vote_average":7.4,"vote_count":23},{"adult":false,"backdrop_path":"/g03h9TULzJZOoXA34Abp5LE7lvt.jpg","genre_ids":[16,14,12],"id":876792,"original_language":"ja","original_title":"劇場版
+        転生したらスライムだった件 紅蓮の絆編","overview":"A long-running conspiracy is swirling over
+        a mysterious power wielded by the Queen in Raja, a small country west of Tempest.
+        When a slime who evolved into a Demon Lord named Rimuru Tempest crosses paths
+        with Hiiro, a survivor of the Ogre race, an incredible adventure packed with
+        new characters begins. The power of bonds will be put to the test!","popularity":31.457,"poster_path":"/xITip9n9uMAUA0TU6niMXU2tbh0.jpg","release_date":"2022-11-25","title":"That
+        Time I Got Reincarnated as a Slime the Movie: Scarlet Bond","video":false,"vote_average":7.361,"vote_count":397},{"adult":false,"backdrop_path":"/zOTrkTIqpzxhSCPYHt28N53QoFB.jpg","genre_ids":[99,35],"id":438493,"original_language":"en","original_title":"Becoming
+        Bond","overview":"The stranger-than-fiction true story of George Lazenby,
+        a poor Australian car mechanic who, through an unbelievable set of circumstances,
+        landed the role of James Bond despite having never acted a day in his life.","popularity":4.484,"poster_path":"/oRyVYIqegDB5rWjfloeu1Zgk332.jpg","release_date":"2017-03-11","title":"Becoming
+        Bond","video":false,"vote_average":7.0,"vote_count":69},{"adult":false,"backdrop_path":"/xzIaIFXs14vr5BGoAQ2IJsQ60EB.jpg","genre_ids":[14,16,28],"id":17581,"original_language":"ja","original_title":"劇場版
+        NARUTO -ナルト- 疾風伝 絆","overview":"A mysterious group of ninjas makes a surprise
+        attack on the Konohagakure, which takes great damage. The nightmare of another
+        Shinobi World War could become a reality. Sasuke, who was still a missing
+        nin from Konoha trying to kill his brother, Itachi, appears for the second
+        time in front of Naruto at an unknown location to prevent it from happening.","popularity":29.291,"poster_path":"/bBqEiQbbfyt4MWR3NhDZMbS4Wp8.jpg","release_date":"2008-08-02","title":"Naruto
+        Shippuden the Movie: Bonds","video":false,"vote_average":7.2,"vote_count":474},{"adult":false,"backdrop_path":"/9K1zhrS8jZ3NFZwzc5RgtwxskLT.jpg","genre_ids":[16,18,53,14],"id":566451,"original_language":"ja","original_title":"Re:ゼロから始める異世界生活
+        氷結の絆","overview":"Covered in ice and snow, Elior Forest is the home to dangerous
+        magical beasts and 50 elves frozen in ice. One day, the great spirit Puck
+        helps a young girl break out of her ice prison. Her name is Emilia, a half-elf
+        born with silver hair, long ears, and amethyst eyes—features that resemble
+        the evil Witch who destroyed half the world long ago.  Shunned by society
+        because of her appearance, Emilia dwells in the forest with Puck as her sole
+        companion and family. Burdened with a sin of destruction she does not remember
+        committing, she spends her days trying to find a way to help her frozen kin.
+        But when the great spirit Melakuera, the Arbitrator of the world, finds Emilia,
+        her right to stay alive is brought into question. Will the bonds of ice she
+        formed with Puck prove to be the warm thread that defies fate?","popularity":19.425,"poster_path":"/ca2ZsUa4Qeik2IwlXFzV51hdxh0.jpg","release_date":"2019-11-08","title":"Re:Zero
+        - Starting Life in Another World The Frozen Bond","video":false,"vote_average":7.4,"vote_count":183},{"adult":false,"backdrop_path":"/sFJ11y7OcbxJgnDIamw6rsvadh4.jpg","genre_ids":[28,16],"id":373877,"original_language":"ja","original_title":"ワンピース
+        エピソード オブ サボ～3兄弟の絆 奇跡の再会と受け継がれる意志～","overview":"Sabo visits a grave-site where
+        he reflects back on his childhood with his brothers Luffy and Ace. After a
+        flashback of his past Sabo travels to the Kingdom of Dressrosa and meets up
+        with a fellow member of the Revolutionary Army to discuss their next mission.
+        Unbeknownst to Sabo, Luffy and his crew are also on the island searching to
+        destroy an artificial Devil Fruit factory.","popularity":10.636,"poster_path":"/yS5z6jMr5reJN6WwtBQcnKQ8b75.jpg","release_date":"2015-08-22","title":"One
+        Piece Episode of Sabo: The Three Brothers'' Bond - The Miraculous Reunion
+        and the Inherited Will","video":false,"vote_average":6.9,"vote_count":38},{"adult":false,"backdrop_path":"/xptBI2iwXQWS3G9v1yfNKJX6Cag.jpg","genre_ids":[99,36,10770],"id":688656,"original_language":"de","original_title":"Richard
+        Sorge - Stalins James Bond","overview":"An account of the troubled life of
+        Richard Sorge (1895-1944), a Soviet spy of German origin who played a decisive
+        role in the outcome of World War II.","popularity":1.46,"poster_path":"/j523NJfe7KRUfBLSOPsGxrTgoyR.jpg","release_date":"2017-12-30","title":"Stalin''s
+        James Bond","video":false,"vote_average":6.7,"vote_count":3},{"adult":false,"backdrop_path":"/gL1plg3LJzAHXt2XitkAkJMnnPO.jpg","genre_ids":[18],"id":1369958,"original_language":"fr","original_title":"FAUX-BOND","overview":"Ezéchiel
+        and Julien are two young bachelor''s 2 students in business management at
+        EM-GABON BUSINESS SCHOOL. They set up a video game shop ago.  For days, they
+        have been preparing together the presentation of their company to the students
+        on campus. Via the university''s audiovisual team with whom they reserve a
+        slot.  The tasks are distributed as follows: Ezéchiel the cerebral studies
+        the reception of the public to make Julien''s speech optimal, who is already
+        quite good at chatting, even more so when compared to Ezéchiel.  It''s D-day.
+        But Julien is absent, which makes Ezéchiel anxious. But, motivated by all
+        the efforts he has already made, he chooses to face his fear.","popularity":0.984,"poster_path":"/rWrH3rIsqClavVpFaiW2UT6hjYb.jpg","release_date":"2024-10-25","title":"FALSE
+        BOND","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/oYtfiuxCysBgb1NN6ckIsNtTUDo.jpg","genre_ids":[16,14],"id":72013,"original_language":"ja","original_title":"劇場版
+        遊☆戯☆王 ～超融合！時空を越えた絆～","overview":"After falling through a time-slip, Yusei
+        Fudo (who has just had his powerful card stolen by a mysterious stranger)
+        meets with Jaden Yuki and Yugi Muto, who agree to help Yusei defeat the evil
+        Paradox, who is planning to destroy Pegasus before he can invent Duel Monsters.","popularity":15.999,"poster_path":"/gY8wNEeN50Pmf1GBYBxYo68YBV9.jpg","release_date":"2010-01-23","title":"Yu-Gi-Oh!:
+        Bonds Beyond Time","video":false,"vote_average":6.5,"vote_count":128},{"adult":false,"backdrop_path":"/8zUTftL7rK8uB6sw0vpq8eUjtx8.jpg","genre_ids":[28,10751,878],"id":587806,"original_language":"ja","original_title":"劇場版
+        ウルトラマンR/B セレクト！絆のクリスタル","overview":"The mysterious Ultraman, Tregear, has
+        suddenly appeared in Ayaka City. Tregear asks what one would do to make their
+        dreams come true, prompting Katsumi to search for his own dream. As a monster
+        appears for the first time in a year, Ultraman Blu and Ultraman Rosso are
+        joined by Ultraman Geed to face off against this new threat. Walking towards
+        their dream with the heart of the Minato family in hand, Ultraman Gruebe is
+        born.","popularity":4.365,"poster_path":"/pGvtKClq2x4DvvinmNnYwYeKups.jpg","release_date":"2019-03-08","title":"Ultraman
+        R/B The Movie: Select! The Crystal of Bond","video":false,"vote_average":7.2,"vote_count":16},{"adult":false,"backdrop_path":"/zN5eohKqT9Rww6m7PQOfyCXPi4.jpg","genre_ids":[10751,12,35],"id":459670,"original_language":"pt","original_title":"Turma
+        da Mônica: Laços","overview":"Fluffy, Jimmy Five''s pet dog, vanished. He
+        develops an infallible plan to rescue the little dog, but, he will need help
+        from his faithful friends: Monica, Maggy and Smudge. Together, they will face
+        challengers and live incredible adventures to get Fluffy back home.","popularity":7.015,"poster_path":"/1ksQfIiWmyu9x4FbNBW5aNclVqu.jpg","release_date":"2019-06-27","title":"Monica
+        and Friends: Bonds","video":false,"vote_average":7.6,"vote_count":281},{"adult":false,"backdrop_path":"/eu0lnvODo3ZfGQpYQqGptqwrAWL.jpg","genre_ids":[28,16,18],"id":215180,"original_language":"ja","original_title":"ワンピースエピソード・オブ・ナミ～航海士の涙と仲間の絆～","overview":"After
+        Nami steals the Going Merry, Roronoa Zoro, Usopp, and later Monkey D. Luffy
+        and Sanji (along with Johnny and Yosaku) set after her and wind up in Cocoyasi
+        Village, Nami''s hometown ruled by the tyrannical fishman Arlong. It is here
+        that Nami''s past and true motives come to light.","popularity":12.585,"poster_path":"/b5DyqvcfzWuXRFcaFF4e9j1nBVK.jpg","release_date":"2012-08-25","title":"One
+        Piece Episode of Nami: Tears of a Navigator and the Bonds of Friends","video":false,"vote_average":6.906,"vote_count":48},{"adult":false,"backdrop_path":"/pS2E1lQsNMrM6zt9qkvNquK3H3q.jpg","genre_ids":[80,27],"id":143472,"original_language":"ja","original_title":"お柳情炎　縛り肌","overview":"When
+        the boss of a yakuza clan in 1920s Osaka is assassinated, Oryu, his mistress,
+        vows revenge. Her search for the killer takes her out of the city. The old
+        boss'' son proves a poor leader, only interested in Omitsu, his high-class
+        girlfriend. Yajima, the second-in-command, is taking advantage of the situation
+        to accumulate power for himself...","popularity":13.1,"poster_path":"/vCISzRPio9ogTGn3mVwZVJNuakF.jpg","release_date":"1975-06-18","title":"Oryu''s
+        Passion: Bondage Skin","video":false,"vote_average":7.0,"vote_count":5},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":378266,"original_language":"sr","original_title":"Džejms
+        Bond je Srbin","overview":"Feature documentary film about the Serbian James
+        Bond, Duško Popov, intelligence agent that inspired the writer Ian Fleming
+        to create the indestructible agent 007.","popularity":0.805,"poster_path":null,"release_date":"2016-01-06","title":"James
+        Bond is a Serb","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/qwry44E24L3J1kohEXSa6u6enRL.jpg","genre_ids":[18],"id":662694,"original_language":"es","original_title":"Las
+        siamesas","overview":"Estela and her mother Clota must travel from Junín,
+        where they live, to the town of Costa Bonita, in Necochea, to see some apartments
+        that Estela''s father has inherited from her.","popularity":1.106,"poster_path":"/fGFmUN18VNDd5TL7zrsVuLhE5wU.jpg","release_date":"2021-03-06","title":"The
+        Siamese Bond","video":false,"vote_average":7.4,"vote_count":7},{"adult":false,"backdrop_path":"/jJYasNGPK2dPwk1iSOV4yiddfXH.jpg","genre_ids":[28,35],"id":2646,"original_language":"cn","original_title":"最佳拍檔III之女皇密令","overview":"A
+        master thief is duped by lookalikes for James Bond and the Queen of England
+        into stealing a valuable gem from a heavily guarded location then must help
+        the police recover it.","popularity":7.482,"poster_path":"/suYE32h1GsqmZhCPVhJuFxUgy7Q.jpg","release_date":"1984-01-25","title":"Aces
+        Go Places III: Our Man from Bond Street","video":false,"vote_average":5.6,"vote_count":37},{"adult":false,"backdrop_path":"/vDonNZWjqSt1jHgg6GPjynTqUTV.jpg","genre_ids":[28,14,878],"id":433467,"original_language":"ja","original_title":"劇場版
+        ウルトラマンオーブ 絆の力、おかりします！","overview":"Ultraman Orb teams up with Ultraman X to
+        battle the evil witch, Mulnau, who seeks to add Earth to her jewelry collection,
+        with the help of Orb''s long-time rival, Jugglas Juggler!","popularity":3.927,"poster_path":"/wP9KdWkSGWEKyGuMBGfxGjJdHLx.jpg","release_date":"2017-03-11","title":"Ultraman
+        Orb the Movie: Let Me Borrow The Power of Bonds!","video":false,"vote_average":6.6,"vote_count":8},{"adult":false,"backdrop_path":"/8Bcm0qBnS6yjwTFad8eI6thzRub.jpg","genre_ids":[99],"id":869250,"original_language":"en","original_title":"Being
+        James Bond","overview":"Daniel Craig candidly reflects on his 15 year adventure
+        as James Bond. Including never-before-seen archival footage from Casino Royale
+        to the upcoming 25th film No Time To Die, Craig shares his personal memories
+        in conversation with 007 producers, Michael G Wilson and Barbara Broccoli.","popularity":16.542,"poster_path":"/kKG9gieki5wgEcVXLfnX1lbOcrO.jpg","release_date":"2021-08-29","title":"Being
+        James Bond","video":false,"vote_average":7.8,"vote_count":85},{"adult":false,"backdrop_path":"/bO7VGuhAvq43RK8480Iz0RM12Kq.jpg","genre_ids":[16,28],"id":256395,"original_language":"ja","original_title":"劇場版イナズマイレブンGO
+        究極の絆 グリフォン","overview":"The Raimon team has been invited by Fifth Sector strangely
+        to a soccer camp. When they agree, things go out of hand since it was revealed
+        that Fifth Sector wants to eliminate them once and for all in the island called
+        God Eden. Now, the Raimon team needs to train harder, to be able to show that
+        they have the strength to fight back and prove Fifth Sector''s doings wrong.","popularity":4.651,"poster_path":"/6ZeewnZcwfYzZeKquBlCkvWLmuR.jpg","release_date":"2011-12-23","title":"Inazuma
+        Eleven GO The Movie: The Ultimate Bonds Gryphon","video":false,"vote_average":8.1,"vote_count":12}],"total_pages":26,"total_results":514}'
+  recorded_at: Fri, 06 Dec 2024 17:44:14 GMT
+recorded_with: VCR 6.3.1
