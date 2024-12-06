@@ -1,0 +1,159 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<TMDB_API_KEY>&query=godzilla
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 06 Dec 2024 16:31:56 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=15038
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 7a9a3300d767764798191a28795608b0
+      X-Memc-Age:
+      - '6717'
+      X-Memc-Expires:
+      - '15038'
+      Etag:
+      - W/"6fcbbe7f304f0b5bf52d72a8f8133069"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8a50fe9452625079391cf0ce7a3e0c56.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - uB82uzuKZRavMxXL8hFmYQtkO01tIfp1J1HG757EnKcOwlv6IXRftg==
+      Age:
+      - '774'
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/zCjZfevPFBbOh2SAx2syIBHSqEI.jpg","genre_ids":[28,18,878],"id":124905,"original_language":"en","original_title":"Godzilla","overview":"Ford
+        Brody, a Navy bomb expert, has just reunited with his family in San Francisco
+        when he is forced to go to Japan to help his estranged father, Joe. Soon,
+        both men are swept up in an escalating crisis when an ancient alpha predator
+        arises from the sea to combat malevolent adversaries that threaten the survival
+        of humanity. The creatures leave colossal destruction in their wake, as they
+        make their way toward their final battleground: San Francisco.","popularity":51.423,"poster_path":"/zokD6uxR2iWfYM3Y84yGJvnNTK7.jpg","release_date":"2014-05-14","title":"Godzilla","video":false,"vote_average":6.343,"vote_count":9088},{"adult":false,"backdrop_path":"/gT4XVSEmGKOJ0EgSEUTfCeqgEtc.jpg","genre_ids":[878,28,53],"id":929,"original_language":"en","original_title":"Godzilla","overview":"French
+        nuclear tests irradiate an iguana into a giant monster that viciously attacks
+        freighter ships in the Pacific Ocean. A team of experts, including Niko Tatopoulos,
+        conclude that the oversized reptile is the culprit. Before long, the giant
+        lizard is loose in Manhattan as the US military races to destroy the monster
+        before it reproduces and it''s spawn takes over the world.","popularity":34.955,"poster_path":"/xJVl1I95StraYAwaNbBkVoWE2qA.jpg","release_date":"1998-05-20","title":"Godzilla","video":false,"vote_average":5.6,"vote_count":3873},{"adult":false,"backdrop_path":"/z48a1H9bSK7zjif13j7yHIUtBHC.jpg","genre_ids":[878,27],"id":340315,"original_language":"it","original_title":"Godzilla","overview":"A
+        re-edited Italian-language dubbed version of the original Godzilla, using
+        as a basis the U.S. version, \"Godzilla, King of the Monsters!\" (1956), plus
+        WWII newsreel footage and clips from other science fiction films. The re-edited
+        film was then colorized via a process called \"Spectrorama 70\" consisting
+        of applying various colored gels to the black and white footage. The film''s
+        opening and ending also features new music composed by musicians Fabio Frizzi,
+        Franco Bixio, and Vince Tempera (under the pseudonym Magnetic System).","popularity":3.134,"poster_path":"/7ef5trz9qKLBSS4DtCQWQPTCrF7.jpg","release_date":"1977-01-01","title":"Godzilla","video":false,"vote_average":6.733,"vote_count":43},{"adult":false,"backdrop_path":"/txYA9N615QJE2tLjmdx2JnFDWsr.jpg","genre_ids":[18,14],"id":1285946,"original_language":"es","original_title":"Godzilla","overview":"A
+        tired man lies on the ground and along with the  sun heat he begins to dissociate.","popularity":2.818,"poster_path":"/zSboA7wUI9ly2OwB9QqL10IjzGj.jpg","release_date":"2024-05-10","title":"Godzilla","video":false,"vote_average":10.0,"vote_count":3},{"adult":false,"backdrop_path":"/oHBhHoNe59VH6bUMazDtJmWOFSS.jpg","genre_ids":[878,27,28],"id":940721,"original_language":"ja","original_title":"ゴジラ-1.0","overview":"In
+        postwar Japan, Godzilla brings new devastation to an already scorched landscape.
+        With no military intervention or government help in sight, the survivors must
+        join together in the face of despair and fight back against an unrelenting
+        horror.","popularity":122.962,"poster_path":"/hkxxMIGaiCTmrEArK7J56JTKUlB.jpg","release_date":"2023-11-03","title":"Godzilla
+        Minus One","video":false,"vote_average":7.6,"vote_count":2328},{"adult":false,"backdrop_path":"/bsu1Dth34U2N9ElMKnnX3DYfvwj.jpg","genre_ids":[35],"id":1125950,"original_language":"en","original_title":"Godzilla","overview":"Two
+        teens bear witness to a monstrous discovery, and cross paths with a secret
+        government organization determined to study the creatures. But with the military’s
+        plan to destroy them using nuclear weapons, the fate of the world rests in
+        their hands.","popularity":2.475,"poster_path":"/ugo2pOdGmto7neoIU9Cq9JZlqYw.jpg","release_date":"2015-05-16","title":"Godzilla","video":false,"vote_average":10.0,"vote_count":8},{"adult":false,"backdrop_path":"/veIyxxi5Gs8gvztLEW1Ysb8rrzs.jpg","genre_ids":[28,12,878],"id":823464,"original_language":"en","original_title":"Godzilla
+        x Kong: The New Empire","overview":"Following their explosive showdown, Godzilla
+        and Kong must reunite against a colossal undiscovered threat hidden within
+        our world, challenging their very existence – and our own.","popularity":224.891,"poster_path":"/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg","release_date":"2024-03-27","title":"Godzilla
+        x Kong: The New Empire","video":false,"vote_average":7.142,"vote_count":3847},{"adult":false,"backdrop_path":"/5QAc8dsyOwJBGQ71mhOLMEivOsF.jpg","genre_ids":[16,28,878],"id":449574,"original_language":"ja","original_title":"GODZILLA
+        怪獣惑星","overview":"A desperate group of refugees attempts to recolonize Earth
+        20,000 years after Godzilla took over. But one young man wants revenge above
+        all else.","popularity":16.754,"poster_path":"/hAuZ7g6TqDLv5fOqXIPgYRguOkm.jpg","release_date":"2017-11-17","title":"Godzilla:
+        Planet of the Monsters","video":false,"vote_average":6.3,"vote_count":492},{"adult":false,"backdrop_path":"/8W2rvs3y7x4KGwjN8dO6HmVPU82.jpg","genre_ids":[28,12,878],"id":36679,"original_language":"ja","original_title":"ゴジラvsキングギドラ","overview":"The
+        Futurians, time-travelers from the 23rd century, arrive in Japan to warn them
+        of the nation''s destruction under Godzilla. They offer to help erase Godzilla
+        from history by preventing his creation. With Godzilla seemingly gone, a new
+        monster emerges as the Futurians'' true intentions are revealed.","popularity":26.888,"poster_path":"/laCPiLcM3yq2I32mE9XNCftRhA.jpg","release_date":"1991-12-14","title":"Godzilla
+        vs. King Ghidorah","video":false,"vote_average":7.025,"vote_count":216},{"adult":false,"backdrop_path":"/q3j4OQFFDKM6fdQt9gE56kfDBNG.jpg","genre_ids":[16,878,28,12],"id":536115,"original_language":"ja","original_title":"GODZILLA
+        星を喰う者","overview":"With no means for defeating Godzilla Earth, mankind watches
+        as King Ghidorah, clad in a golden light, descends on the planet. The heavens
+        and earth shake once again as the war moves to a higher dimension.","popularity":16.824,"poster_path":"/fOA44BITFth0u4hMSOUgpK0kM6t.jpg","release_date":"2018-11-09","title":"Godzilla:
+        The Planet Eater","video":false,"vote_average":6.5,"vote_count":344},{"adult":false,"backdrop_path":"/2Sa7JQVxeUdK5VSxqz3TKHjfrvS.jpg","genre_ids":[28,12,878,14,53],"id":15767,"original_language":"ja","original_title":"ゴジラ
+        ファイナルウォーズ","overview":"Humanity finally rids themselves of Godzilla, imprisoning
+        him in an icy tomb in the South Pole. All is peaceful until various monsters
+        emerge to lay waste to Earth''s cities. Overwhelmed, humanity is seemingly
+        saved by a race of benevolent aliens known as Xiliens. But not all is what
+        it seems with these bizarre visitors. If humanity wishes to survive, they
+        must reluctantly resurrect their most hated enemy, Godzilla.","popularity":24.427,"poster_path":"/zpw7tJnN7yQfL4DO9HvuvnrAGRZ.jpg","release_date":"2004-12-04","title":"Godzilla:
+        Final Wars","video":false,"vote_average":7.0,"vote_count":301},{"adult":false,"backdrop_path":"/mTL72rHXjdwQYsfnuJC1Szbcckg.jpg","genre_ids":[28,878,27],"id":12561,"original_language":"ja","original_title":"ゴジラvsデストロイア","overview":"A
+        burning Godzilla, on the verge of meltdown, emerges to lay siege to Hong Kong.
+        At the same time horrifying new organisms are discovered in Japan. These crustacean-like
+        beings are seemingly born of the Oxygen Destroyer, the weapon that killed
+        the original Godzilla.","popularity":18.412,"poster_path":"/csebMf1IWokaWOughl5s3uX8p44.jpg","release_date":"1995-12-09","title":"Godzilla
+        vs. Destoroyah","video":false,"vote_average":7.8,"vote_count":248},{"adult":false,"backdrop_path":"/mu4q1jPLdW5hE7BWZEWRvuAh3ZN.jpg","genre_ids":[16,878],"id":492719,"original_language":"ja","original_title":"GODZILLA
+        決戦機動増殖都市","overview":"Humanity''s desperate battle to reclaim the Earth from
+        Godzilla continues. The key to defeating the King of the Monsters may be Mechagodzilla,
+        a robotic weapon thought to have been lost nearly 20,000 years ago.","popularity":14.698,"poster_path":"/8y1YhD6niL3aMfeEPhStHMWdPxH.jpg","release_date":"2018-05-18","title":"Godzilla:
+        City on the Edge of Battle","video":false,"vote_average":6.5,"vote_count":351},{"adult":false,"backdrop_path":"/9nyToPG5mhfm4KiPGChu35jH9QZ.jpg","genre_ids":[28,878,27],"id":315011,"original_language":"ja","original_title":"シン・ゴジラ","overview":"When
+        a massive, gilled monster emerges from the deep and tears through the city,
+        the government scrambles to save its citizens.  A rag-tag team of volunteers
+        cuts through a web of red tape to uncover the monster''s weakness and its
+        mysterious ties to a foreign superpower.  But time is not on their side -
+        the greatest catastrophe to ever befall the world is about to evolve right
+        before their very eyes.","popularity":28.878,"poster_path":"/jPNShaWZMpVF0iQ7j1dvTuZLD20.jpg","release_date":"2016-07-29","title":"Shin
+        Godzilla","video":false,"vote_average":7.2,"vote_count":1295},{"adult":false,"backdrop_path":"/tWeQvXUaFoS0IP5anj7pdRsP6xF.jpg","genre_ids":[53,27,878],"id":1678,"original_language":"ja","original_title":"ゴジラ","overview":"Japan
+        is thrown into a panic after several ships are sunk near Odo Island. An expedition
+        to the island led by Dr. Kyohei Yamane soon discover something far more devastating
+        than imagined in the form of a 50 meter tall monster whom the natives call
+        Gojira. Now the monster begins a rampage that threatens to destroy not only
+        Japan, but the rest of the world as well.","popularity":31.436,"poster_path":"/fg635r7DxfmbQpnIh7vLCOsGoOG.jpg","release_date":"1954-11-03","title":"Godzilla","video":false,"vote_average":7.632,"vote_count":967},{"adult":false,"backdrop_path":"/wh832wXrqIVdSC5271fkJIuyji4.jpg","genre_ids":[28,27,14,878],"id":18289,"original_language":"ja","original_title":"ゴジラvsビオランテ","overview":"After
+        the previous Godzilla attack, a miniature arms race ensues to collect his
+        cells. Concerned over Godzilla''s possible return, the Japanese government
+        uses the cells to create a new bio-weapon, ANEB (Anti-Nuclear Energy Bacteria).
+        They seeks the aid of geneticist Genshiro Shiragami, who''s experiments result
+        in a new mutation.","popularity":16.257,"poster_path":"/tHchmbNaJNxp9vRGExvYg3dwMab.jpg","release_date":"1989-12-16","title":"Godzilla
+        vs. Biollante","video":false,"vote_average":7.398,"vote_count":245},{"adult":false,"backdrop_path":"/9H8wGFwKKt2ADRhg2odywTg1NCZ.jpg","genre_ids":[878,35,12,14,28],"id":1680,"original_language":"ja","original_title":"キングコング対ゴジラ","overview":"The
+        advertising director of Pacific Pharmaceuticals, frustrated with the low ratings
+        of their sponsored TV program, seeks a more sensationalist approach. He orders
+        his staff to Faro Island to capture King Kong for exploitation. As Godzilla
+        re-emerges, a media frenzy generates with Pacific looking to capitalize off
+        of the ultimate battle.","popularity":13.807,"poster_path":"/dmCfyzUl0Ylk8Rpi6dYyWuBrnNr.jpg","release_date":"1962-08-11","title":"King
+        Kong vs. Godzilla","video":false,"vote_average":6.8,"vote_count":301},{"adult":false,"backdrop_path":"/kLtyj68xLGIDgD39oDn8pJACD48.jpg","genre_ids":[28,12,878],"id":39466,"original_language":"ja","original_title":"ゴジラvsスペースゴジラ","overview":"A
+        mysterious extraterrestrial being resembling Godzilla rapidly approaches Earth.
+        The monster, dubbed SpaceGodzilla, lands to challenge the King of the Monsters.","popularity":11.076,"poster_path":"/zsPR2wpPpOOCG5Xvc0WHJz34kyX.jpg","release_date":"1994-12-10","title":"Godzilla
+        vs. SpaceGodzilla","video":false,"vote_average":6.8,"vote_count":205},{"adult":false,"backdrop_path":"/5KPRH4vvVVsAC5y0d0g5qNw6AT3.jpg","genre_ids":[28,12,10751,878,14],"id":39264,"original_language":"ja","original_title":"ゴジラ対メガロ","overview":"Inventor
+        Goro Ibuki creates a humanoid robot named Jet Jaguar. It is soon seized by
+        an undersea race of people called the Seatopians. Using Jet Jaguar as a guide,
+        the Seatopians send Megalon as vengeance for the nuclear tests that have devastated
+        their society.","popularity":18.569,"poster_path":"/au8CGZeCjgoxHe33gZWO0DDvndL.jpg","release_date":"1973-03-17","title":"Godzilla
+        vs. Megalon","video":false,"vote_average":6.2,"vote_count":204},{"adult":false,"backdrop_path":"/hUXnEOHNMDsx62UkUo9cO17SyQi.jpg","genre_ids":[878,28,10751,27],"id":39464,"original_language":"ja","original_title":"ゴジラ対ヘドラ","overview":"An
+        ever evolving alien life-form arrives on a comet from the Dark Gaseous Nebula
+        and proceeds to consume pollution. Spewing mists of sulfuric acid and corrosive
+        sludge, neither humanity nor Godzilla may be able to defeat this toxic menace.","popularity":12.972,"poster_path":"/sy9k4VKud71zhY4a7kaq9flptw.jpg","release_date":"1971-07-24","title":"Godzilla
+        vs. Hedorah","video":false,"vote_average":6.8,"vote_count":206}],"total_pages":9,"total_results":170}'
+  recorded_at: Fri, 06 Dec 2024 16:44:51 GMT
+recorded_with: VCR 6.3.1

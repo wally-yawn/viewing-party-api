@@ -44,15 +44,17 @@ http_interactions:
       - Accept-Encoding,accept-encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
+      - 1.1 badefad2d1fb92bb4620df1ce11d8c92.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - tzcuq8xgT_jstqlEE8xS363gd2FgQMbGqspuNSkggFVXUBuGFwpwew==
+      - 5OdUw22h9H3NkBRjJPRnKl9ebTGJfsqL1T3MfRSb40rsoebT1JVOBQ==
+      Age:
+      - '5324'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/tElnmtQ6yz1PjN1kePNl8yMSb59.jpg","genre_ids":[16,12,10751,35],"id":1241982,"original_language":"en","original_title":"Moana
@@ -155,5 +157,5 @@ http_interactions:
         survive 7 rooms and 7 of the most vicious killers in the country. If they
         win, they regain their freedom.","popularity":682.657,"poster_path":"/4dRtXjk1rcsZlaMJpBn6Nh9cTfO.jpg","release_date":"2024-06-25","title":"Arena
         Wars","video":false,"vote_average":5.463,"vote_count":27}],"total_pages":47491,"total_results":949807}'
-  recorded_at: Thu, 05 Dec 2024 22:16:03 GMT
+  recorded_at: Thu, 05 Dec 2024 23:44:47 GMT
 recorded_with: VCR 6.3.1

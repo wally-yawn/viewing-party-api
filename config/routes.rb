@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:create, :index]
       resources :sessions, only: :create
+      namespace :top_movies do
+        resources :search, only: :index
+      end
       resources :top_movies, only: :index
     end
   end
