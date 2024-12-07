@@ -18,11 +18,11 @@ RSpec.describe "Viewing Party API" do
 
     it 'creates a viewing party' do
       post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body, as: :json
-
       expect(response).to have_http_status(:created)
       json = JSON.parse(response.body, symbolize_names: true)
+      # require 'pry'; binding.pry
       expect(json[:data][:type]).to eq("viewing_party")
-      expect(json[:data][:id]).to eq(ViewingParty.last.id.to_s)
+      expect(json[:data][:id]).to eq(ViewingParty.last.id)
       expect(json[:data][:attributes][:name]).to eq(@viewing_party_body[:name])
       expect(json[:data][:attributes][:start_time]).to eq(@viewing_party_body[:start_time])
       expect(json[:data][:attributes][:end_time]).to eq(@viewing_party_body[:end_time])
@@ -31,9 +31,9 @@ RSpec.describe "Viewing Party API" do
       expect(json[:data][:attributes][:invitees][0][:id]).to eq(@user1.id)
       expect(json[:data][:attributes][:invitees][0][:name]).to eq(@user1.name)
       expect(json[:data][:attributes][:invitees][0][:username]).to eq(@user1.username)
-      expect(json[:data][:attributes][:invitees][0][:id]).to eq(@user2.id)
-      expect(json[:data][:attributes][:invitees][0][:name]).to eq(@user2.name)
-      expect(json[:data][:attributes][:invitees][0][:username]).to eq(@user2.username)
+      expect(json[:data][:attributes][:invitees][1][:id]).to eq(@user2.id)
+      expect(json[:data][:attributes][:invitees][1][:name]).to eq(@user2.name)
+      expect(json[:data][:attributes][:invitees][1][:username]).to eq(@user2.username)
     end
 
     #Need tests for

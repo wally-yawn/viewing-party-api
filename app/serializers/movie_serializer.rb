@@ -3,7 +3,6 @@ class MovieSerializer
   attributes :original_title, :popularity
 
   def self.format_movie_list(movies)
-    # require 'pry'; binding.pry
     { data: 
         movies.map do |movie|
           {
