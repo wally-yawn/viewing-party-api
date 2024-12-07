@@ -21,13 +21,19 @@ RSpec.describe "Viewing Party API" do
 
       expect(response).to have_http_status(:created)
       json = JSON.parse(response.body, symbolize_names: true)
-      # expect(json[:data][:type]).to eq("user")
-      # expect(json[:data][:id]).to eq(User.last.id.to_s)
-      # expect(json[:data][:attributes][:name]).to eq(user_params[:name])
-      # expect(json[:data][:attributes][:username]).to eq(user_params[:username])
-      # expect(json[:data][:attributes]).to have_key(:api_key)
-      # expect(json[:data][:attributes]).to_not have_key(:password)
-      # expect(json[:data][:attributes]).to_not have_key(:password_confirmation)
+      expect(json[:data][:type]).to eq("viewing_party")
+      expect(json[:data][:id]).to eq(ViewingParty.last.id.to_s)
+      expect(json[:data][:attributes][:name]).to eq(@viewing_party_body[:name])
+      expect(json[:data][:attributes][:start_time]).to eq(@viewing_party_body[:start_time])
+      expect(json[:data][:attributes][:end_time]).to eq(@viewing_party_body[:end_time])
+      expect(json[:data][:attributes][:movie_id]).to eq(@viewing_party_body[:movie_id])
+      expect(json[:data][:attributes][:movie_title]).to eq(@viewing_party_body[:movie_title])
+      expect(json[:data][:attributes][:invitees][0][:id]).to eq(@user1.id)
+      expect(json[:data][:attributes][:invitees][0][:name]).to eq(@user1.name)
+      expect(json[:data][:attributes][:invitees][0][:username]).to eq(@user1.username)
+      expect(json[:data][:attributes][:invitees][0][:id]).to eq(@user2.id)
+      expect(json[:data][:attributes][:invitees][0][:name]).to eq(@user2.name)
+      expect(json[:data][:attributes][:invitees][0][:username]).to eq(@user2.username)
     end
 
     #Need tests for
