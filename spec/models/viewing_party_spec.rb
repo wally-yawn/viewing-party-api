@@ -11,7 +11,7 @@ RSpec.describe ViewingParty, type: :model do
     it { should validate_presence_of(:end_time) }
     it { should validate_presence_of(:movie_id) }
     it { should validate_presence_of(:movie_title) }
-    # it { should validate_presence_of(:invitees) }
+    it { should validate_presence_of(:host) }
   end
 
   describe 'create_viewing_party_invitees' do
@@ -26,6 +26,7 @@ RSpec.describe ViewingParty, type: :model do
         end_time: "2025-02-01 14:30:00",
         movie_id: 278,
         movie_title: "The Shawshank Redemption",
+        host: @user1.id
       }
       @viewing_party1 = ViewingParty.create!(@viewing_party_params)
 

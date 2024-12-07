@@ -1,6 +1,7 @@
 class Api::V1::ViewingPartiesController < ApplicationController
 
   def create
+    viewing_party_params[:host] = params[:host_id]
     viewing_party = ViewingParty.create!(viewing_party_params)
     if viewing_party.save
       render json: ViewingPartySerializer.new(viewing_party), status: :created
@@ -12,6 +13,6 @@ class Api::V1::ViewingPartiesController < ApplicationController
   private
 
   def viewing_party_params
-    params.permit(:name, :start_time, :end_time, :movie_id, :movie_title,)# :invitees)
+    params.permit(:name, :start_time, :end_time, :movie_id, :movie_title, :host)# :invitees)
   end
 end

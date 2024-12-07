@@ -29,5 +29,11 @@ RSpec.describe "Viewing Party API" do
       # expect(json[:data][:attributes]).to_not have_key(:password)
       # expect(json[:data][:attributes]).to_not have_key(:password_confirmation)
     end
+
+    #Need tests for
+    #missing attributes
+    #run time too long
+    #end time before start time
+    #invalid users (make the party just ignore the invalid user)
   end
 end
