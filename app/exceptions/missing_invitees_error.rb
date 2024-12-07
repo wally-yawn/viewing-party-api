@@ -1,0 +1,3 @@
+class MissingInviteesError < StandardError
+  
+end
