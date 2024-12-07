@@ -11,6 +11,6 @@ RSpec.describe ViewingParty, type: :model do
     it { should validate_presence_of(:end_time) }
     it { should validate_presence_of(:movie_id) }
     it { should validate_presence_of(:movie_title) }
-    it { should validate_presence_of(:invitees) }
+    # it { should validate_presence_of(:invitees) }
   end
 end

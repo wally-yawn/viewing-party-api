@@ -70,6 +70,7 @@ RSpec.describe "Users API", type: :request do
 
   describe "Get All Users Endpoint" do
     it "retrieves all users but does not share any sensitive data" do
+      User.destroy_all
       User.create!(name: "Tom", username: "myspace_creator", password: "test123")
       User.create!(name: "Oprah", username: "oprah", password: "abcqwerty")
       User.create!(name: "Beyonce", username: "sasha_fierce", password: "blueivy")

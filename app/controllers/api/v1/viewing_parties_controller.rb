@@ -1,6 +1,9 @@
-class API::V1::ViewingPartyController < ApplicationController
+class Api::V1::ViewingPartiesController < ApplicationController
+
   def create
-    viewing_party = ViewingParty.new(viewing_party_params)
+    require 'pry'; binding.pry
+    viewing_party = ViewingParty.create!(viewing_party_params)
+    require 'pry'; binding.pry
     if viewing_party.save
       render json: ViewingPartySerializer.new(viewing_party), status: :created
     else
@@ -11,6 +14,6 @@ class API::V1::ViewingPartyController < ApplicationController
   private
 
   def viewing_party_params
-    params.permit(:name, :start_time, :end_time, :movie_id, :movie_title, :invitees)
+    params.permit(:name, :start_time, :end_time, :movie_id, :movie_title,)# :invitees)
   end
 end
