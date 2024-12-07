@@ -13,4 +13,24 @@ RSpec.describe ViewingParty, type: :model do
     it { should validate_presence_of(:movie_title) }
     # it { should validate_presence_of(:invitees) }
   end
+
+  describe 'create_viewing_party_invitees' do
+    it 'can create viewing party invitees from an array of invitees' do
+      User.destroy_all
+      ViewingPartyInvitee.destroy_all
+      @user1 = User.create!(name: "Wally", username: "www1", password: "abc123")
+      @user2 = User.create!(name: "Wally2", username: "www2", password: "abc123")
+      @viewing_party_params = {
+        name: "Wally's Party!",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 14:30:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption",
+      }
+      @viewing_party1 = ViewingParty.create!(@viewing_party_params)
+
+      ViewingParty.create_viewing_party_invitees(@viewing_party1.id, [@user1.id,@user2.id])
+      expect(ViewingPartyInvitee.all.length).to eq(2)
+    end
+  end
 end

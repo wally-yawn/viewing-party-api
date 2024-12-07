@@ -1,9 +1,7 @@
 class Api::V1::ViewingPartiesController < ApplicationController
 
   def create
-    require 'pry'; binding.pry
     viewing_party = ViewingParty.create!(viewing_party_params)
-    require 'pry'; binding.pry
     if viewing_party.save
       render json: ViewingPartySerializer.new(viewing_party), status: :created
     else

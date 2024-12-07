@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "Viewing Party API" do
   describe "creating a viewing party" do
     before :each do
+      User.destroy_all
       @user1 = User.create!(name: "Wally", username: "www1", password: "abc123")
       @user2 = User.create!(name: "Wally2", username: "www2", password: "abc123")
       @viewing_party_body = {
@@ -16,7 +17,6 @@ RSpec.describe "Viewing Party API" do
     end
 
     it 'creates a viewing party' do
-
       post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body, as: :json
 
       expect(response).to have_http_status(:created)
