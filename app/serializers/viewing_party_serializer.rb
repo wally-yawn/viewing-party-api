@@ -1,7 +1,6 @@
 class ViewingPartySerializer
 
   def self.format_viewing_party(viewing_party)
-    # require 'pry'; binding.pry
     { data: 
       {
         id: viewing_party.id,
