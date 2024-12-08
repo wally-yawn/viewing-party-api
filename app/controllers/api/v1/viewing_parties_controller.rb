@@ -20,10 +20,10 @@ class Api::V1::ViewingPartiesController < ApplicationController
   end
 
   def handle_missing_parameter(exception)
-    render json: { error: exception.message }, status: 422
+    render json: { error: exception.message }, status: 400
   end
 
   def handle_end_before_start(exception)
-    render json: { error: exception.message }, status: 422
+    render json: { error: exception.message }, status: 400
   end
 end
