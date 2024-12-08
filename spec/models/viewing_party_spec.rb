@@ -66,5 +66,60 @@ RSpec.describe ViewingParty, type: :model do
 
       expect { ViewingParty.validate_viewing_party(@viewing_party_params_end).to raise_error(EndBeforeStartError) }
     end
+
+    it 'returns an error when name is not supplied' do
+      @viewing_party_fail = {
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 14:30:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption"
+      }
+
+      expect { ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+    end
+
+    it 'returns an error when start_time is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        end_time: "2025-02-01 14:30:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption"
+      }
+
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+    end
+
+    it 'returns an error when end_time is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        start_time: "2025-02-01 10:00:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption"
+      }
+
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+    end
+
+    it 'returns an error when movie_id is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 14:30:00",
+        movie_title: "The Shawshank Redemption"
+      }
+
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+    end
+
+    it 'returns an error when movie_title is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 14:30:00",
+        movie_id: 278
+      }
+
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+    end
   end
 end
