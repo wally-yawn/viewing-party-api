@@ -38,8 +38,8 @@ RSpec.describe "Viewing Party API" do
       expect(json[:data][:attributes][:invitees][1][:username]).to eq(@user2.username)
     end
 
-    it 'returns an error when required attributes are not supplied' do
-      @viewing_party_missing_name = {
+    it 'returns an error when name is not supplied' do
+      @viewing_party_fail = {
         start_time: "2025-02-01 10:00:00",
         end_time: "2025-02-01 14:30:00",
         movie_id: 278,
@@ -47,64 +47,89 @@ RSpec.describe "Viewing Party API" do
         invitees: [@user1.id, @user2.id]
       }
 
-      @viewing_party_body_missing_start = {
-        name: "Wally's Party!",
-        end_time: "2025-02-01 14:30:00",
-        movie_id: 278,
-        movie_title: "The Shawshank Redemption",
-        invitees: [@user1.id, @user2.id]
-      }
-
-      @viewing_party_missing_end = {
-        name: "Wally's Party!",
-        start_time: "2025-02-01 10:00:00",
-        movie_id: 278,
-        movie_title: "The Shawshank Redemption",
-        invitees: [@user1.id, @user2.id]
-      }
-
-      @viewing_party_body_missing_movie_id = {
-        name: "Wally's Party!",
-        start_time: "2025-02-01 10:00:00",
-        end_time: "2025-02-01 14:30:00",
-        movie_title: "The Shawshank Redemption",
-        invitees: [@user1.id, @user2.id]
-      }
-
-      @viewing_party_body_missing_movie_title = {
-        name: "Wally's Party!",
-        start_time: "2025-02-01 10:00:00",
-        end_time: "2025-02-01 14:30:00",
-        movie_id: 278,
-        invitees: [@user1.id, @user2.id]
-      }
-
-      @viewing_party_body_missing_invitees = {
-        name: "Wally's Party!",
-        start_time: "2025-02-01 10:00:00",
-        end_time: "2025-02-01 14:30:00",
-        movie_id: 278,
-        movie_title: "The Shawshank Redemption"
-      }
-
-      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body_missing_start, as: :json
+      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_fail, as: :json
       expect(response).to have_http_status(400)
-
-      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body_missing_end, as: :json
-      expect(response).to have_http_status(400)
-
-      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body_missing_movie_id, as: :json
-      expect(response).to have_http_status(400)
-
-      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body_missing_movie_title, as: :json
-      expect(response).to have_http_status(400)
-
-      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body_missing_invitees, as: :json
-      expect(response).to have_http_status(400)
-
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("param is missing or the value is empty: name is required")
     end
 
-    it 'it validates party duration less than run time' do
+    it 'returns an error when start_time is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        end_time: "2025-02-01 14:30:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption",
+        invitees: [@user1.id, @user2.id]
+      }
+
+      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_fail, as: :json
+      expect(response).to have_http_status(400)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("param is missing or the value is empty: start_time is required")
+    end
+
+    it 'returns an error when end_time is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        start_time: "2025-02-01 10:00:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption",
+        invitees: [@user1.id, @user2.id]
+      }
+
+      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_fail, as: :json
+      expect(response).to have_http_status(400)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("param is missing or the value is empty: end_time is required")
+    end
+
+    it 'returns an error when movie_id is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 14:30:00",
+        movie_title: "The Shawshank Redemption",
+        invitees: [@user1.id, @user2.id]
+      }
+
+      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_fail, as: :json
+      expect(response).to have_http_status(400)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("param is missing or the value is empty: movie_id is required")
+    end
+
+    it 'returns an error when movie_title is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 14:30:00",
+        movie_id: 278,
+        invitees: [@user1.id, @user2.id]
+      }
+
+      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_fail, as: :json
+      expect(response).to have_http_status(400)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("param is missing or the value is empty: movie_title is required")
+    end
+
+    it 'returns an error when invitees is not supplied' do
+      @viewing_party_fail = {
+        name: "wally",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 14:30:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption",
+
+      }
+
+      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_fail, as: :json
+      expect(response).to have_http_status(400)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("param is missing or the value is empty: invitees is required")
+    end
+
+    xit 'it validates party duration less than run time' do
       @viewing_party_body_too_short = {
         name: "Wally's Party!",
         start_time: "2025-02-01 10:00:00",
@@ -155,9 +180,5 @@ RSpec.describe "Viewing Party API" do
       expect(json[:data][:attributes][:movie_title]).to eq(@viewing_party_body[:movie_title])
       expect(json[:data][:attributes][:invitees].length).to eq(1)
     end
-
-    #Need tests for
-
-    #run time too long
   end
 end

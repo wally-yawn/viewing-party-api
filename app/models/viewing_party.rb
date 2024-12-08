@@ -12,7 +12,7 @@ class ViewingParty < ApplicationRecord
 
   def self.create_viewing_party_invitees(viewing_party_id, invitees)
     if invitees == nil
-      raise MissingInviteesError, "Missing invitees"
+      raise MissingInviteesError, "param is missing or the value is empty: invitees is required"
     end
     invitees.map do |invitee|
       if User.exists?(invitee)
@@ -41,6 +41,7 @@ class ViewingParty < ApplicationRecord
 
   private
   def self.validate_presence_of_required_fields(viewing_party_attributes)
+
     if !viewing_party_attributes.has_key?(:start_time)
       raise ActionController::ParameterMissing, "start_time is required"
     end
