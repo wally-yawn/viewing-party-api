@@ -4,16 +4,20 @@ class MovieSerializer
 
   def self.format_movie_list(movies)
     { data: 
-        movies.map do |movie|
-          {
-          id: movie.id,
-          type: "movie",
-            attributes: {
-              title: movie.title,
-              vote_average: movie.vote_average
-            }
+      movies.map do |movie|
+        {
+        id: movie.id,
+        type: "movie",
+          attributes: {
+            title: movie.title,
+            vote_average: movie.vote_average
           }
-        end
+        }
+      end
     }
+  end
+
+  def format_movie(movie)
+    puts 'implement format_movie'
   end
 end

@@ -15,6 +15,10 @@ class MovieGateway
     return_movies(response)
   end
 
+  def self.get_movie_details(movie_id)
+
+  end
+
   private_class_method
 
   def self.return_movies(response)

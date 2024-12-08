@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Movie do
-  it 'can create a movie from a json hash' do
+  it 'can create a movie from a top movies json hash' do
     movie_data = {
       :adult=>false,
       :backdrop_path=>"/tElnmtQ6yz1PjN1kePNl8yMSb59.jpg",
@@ -25,4 +25,9 @@ RSpec.describe Movie do
     expect(movie2.title).to eq("Moana 2")
     expect(movie2.vote_average).to eq(7.0)
   end
+
+  xit 'can create a movie from a movie details hash' do
+    
+  end
+
 end

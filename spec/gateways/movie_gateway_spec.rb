@@ -12,4 +12,16 @@ RSpec.describe MovieGateway do
     expect(movies.length).to eq(20)
     expect(movies[0].title).to eq("Demon Slayer: Kimetsu no Yaiba – Sibling's Bond")
   end
+
+  describe 'get_movie_details' do
+    xit 'gets movie details', :vcr do
+      movie = MovieGateway.get_movie_details
+      # expect(movie_details)
+    end
+
+    xit 'returns an error for an invalid movie', :vcr do
+      movie = MovieGateway.get_movie_details
+      # expect(movie_details)
+    end
+  end
 end

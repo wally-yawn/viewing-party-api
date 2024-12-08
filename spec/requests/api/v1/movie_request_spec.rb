@@ -38,4 +38,14 @@ RSpec.describe "Movies API" do
       expect(JSON.parse(response.body)).to eq({ "error" => "param is missing or the value is empty: keyword" })
     end
   end
+
+  describe "movie_details" do
+    xit 'gets the movie details for a valid movie' do
+
+    end
+
+    xit 'returns an error for an invalid movie' do
+
+    end
+  end
 end
