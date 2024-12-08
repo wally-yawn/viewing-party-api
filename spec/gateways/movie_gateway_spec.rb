@@ -16,7 +16,6 @@ RSpec.describe MovieGateway do
   describe 'get_movie_details' do
     it 'gets movie details', :vcr do
       movie_details = MovieGateway.get_movie_details(278)
-      # require 'pry'; binding.pry
       expect(movie_details[:id]).to eq(278)
       expect(movie_details[:title]).to eq("The Shawshank Redemption")
       expect(movie_details[:release_year]).to eq(1994)
@@ -33,9 +32,8 @@ RSpec.describe MovieGateway do
       expect(movie_details[:reviews][1][:author]).to eq("John Chard")
     end
 
-    xit 'returns an error for an invalid movie', :vcr do
-      movie = MovieGateway.get_movie_details
-      # expect(movie)
+    it 'returns an error for an invalid movie'do
+      expect { MovieGateway.get_movie_details(999999999999999999999999999999999999999999999999).to raise_error(InvalidMovieError) }
     end
   end
 end

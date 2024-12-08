@@ -45,7 +45,6 @@ RSpec.describe "Movies API" do
 
       expect(response).to be_successful
       json = JSON.parse(response.body, symbolize_names: true)
-      # require 'pry'; binding.pry
       expect(json[:data][:id]).to eq(278)
       expect(json[:data][:type]).to eq("movie")
       expect(json[:data][:attributes][:title]).to eq("The Shawshank Redemption")
@@ -67,8 +66,11 @@ RSpec.describe "Movies API" do
       expect(json[:data][:attributes][:reviews][1][:review]).to include("Some birds aren't meant to be caged")
     end
 
-    xit 'returns an error for an invalid movie' do
-
+    it 'returns an error for an invalid movie' do
+      get "/api/v1/movies/9999999999999999999999999999999"
+      expect(response).to have_http_status(404)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("No movie with this id found")
     end
   end
 end

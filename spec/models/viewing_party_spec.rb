@@ -75,7 +75,7 @@ RSpec.describe ViewingParty, type: :model do
         movie_title: "The Shawshank Redemption"
       }
 
-      expect { ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
     end
 
     it 'returns an error when start_time is not supplied' do

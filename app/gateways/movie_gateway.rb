@@ -17,6 +17,10 @@ class MovieGateway
 
   def self.get_movie_details(movie_id)
     response_details = conn.get("3/movie/#{movie_id}", { api_key: Rails.application.credentials.tmdb[:key] })
+    if response_details.status == 404
+      raise InvalidMovieError, "No movie with this id found"
+    end
+
     details = JSON.parse(response_details.body, symbolize_names: true)
     
     response_credits = conn.get("3/movie/#{movie_id}/credits", { api_key: Rails.application.credentials.tmdb[:key] })
