@@ -129,7 +129,7 @@ RSpec.describe "Viewing Party API" do
       expect(json[:error]).to eq("param is missing or the value is empty: invitees is required")
     end
 
-    xit 'it validates party duration less than run time' do
+    it 'it validates party duration less than run time' do
       @viewing_party_body_too_short = {
         name: "Wally's Party!",
         start_time: "2025-02-01 10:00:00",

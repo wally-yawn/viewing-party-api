@@ -23,7 +23,6 @@ class ViewingParty < ApplicationRecord
   end
 
   def self.validate_viewing_party(viewing_party_attributes)
-    # binding.pry
     validate_presence_of_required_fields(viewing_party_attributes)
     start_time = DateTime.parse(viewing_party_attributes[:start_time])
     end_time = DateTime.parse(viewing_party_attributes[:end_time])
@@ -42,7 +41,6 @@ class ViewingParty < ApplicationRecord
 
   private
   def self.validate_presence_of_required_fields(viewing_party_attributes)
-    # require 'pry'; binding.pry
     if !viewing_party_attributes.has_key?(:start_time)
       raise ActionController::ParameterMissing, "start_time is required"
     end
@@ -61,6 +59,7 @@ class ViewingParty < ApplicationRecord
   end
 
   def self.get_movie_run_time(movie_id)
-    100
+    movie_details = MovieGateway.get_movie_details(movie_id)
+    runtime = movie_details[:runtime]
   end
 end
