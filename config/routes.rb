@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :top_movies, only: :index
       # resources :viewing_party, only: :create
       post "viewing_parties/:host_id", to: "viewing_parties#create"
-      resources :movie, only: :show
+      resources :movies, only: :show
     end
   end
 end

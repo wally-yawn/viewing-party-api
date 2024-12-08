@@ -41,7 +41,6 @@ class MovieGateway
   end
 
   def self.format_movie_response(details, credits, reviews)
-    # require 'pry'; binding.pry
     movie_data = {
       id: details[:id],
       title: details[:title],
