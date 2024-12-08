@@ -20,7 +20,11 @@ class ViewingParty < ApplicationRecord
     end
   end
 
-  def self.validate_viewing_party
-    
+  def self.validate_viewing_party(viewing_party_attributes)
+    start_time = DateTime.parse(viewing_party_attributes[:start_time])
+    end_time = DateTime.parse(viewing_party_attributes[:end_time])
+    if end_time < start_time 
+      raise EndBeforeStartError, "The end time cannot be before the start time"
+    end
   end
 end

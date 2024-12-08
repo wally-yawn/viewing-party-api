@@ -36,16 +36,35 @@ RSpec.describe ViewingParty, type: :model do
   end
 
   describe 'validate_viewing_party' do
+    before :each do
+      User.destroy_all
+      @user1 = User.create!(name: "Wally", username: "www1", password: "abc123")
+    end
+
     xit 'it validates party duration less than run time' do
+      @viewing_party_params_short = {
+        name: "Wally's Party!",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 10:01:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption",
+        host: @user1.id
+      }
 
+      expect(ViewingParty.validate_viewing_party(@viewing_party_params_short)).to raise_error(TooShortError)
     end
 
-    xit 'it validates start time is before end time' do
+    it 'it validates start time is before end time' do
+      @viewing_party_params_end = {
+        name: "Wally's Party!",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 09:30:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption",
+        host: @user1.id
+      }
 
-    end
-    
-    xit 'it does not error if invitee does not exist' do
-
+      expect { ViewingParty.validate_viewing_party(@viewing_party_params_end).to raise_error(EndBeforeStartError) }
     end
   end
 end

@@ -1,0 +1,3 @@
+class EndBeforeStartError < StandardError
+  
+end
