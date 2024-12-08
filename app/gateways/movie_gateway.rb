@@ -16,7 +16,16 @@ class MovieGateway
   end
 
   def self.get_movie_details(movie_id)
-
+    response_details = conn.get("3/movie/#{movie_id}", { api_key: Rails.application.credentials.tmdb[:key] })
+    details = JSON.parse(response_details.body, symbolize_names: true)
+    
+    response_credits = conn.get("3/movie/#{movie_id}/credits", { api_key: Rails.application.credentials.tmdb[:key] })
+    credits = JSON.parse(response_credits.body, symbolize_names: true)
+    
+    response_reviews = conn.get("3/movie/#{movie_id}/reviews", { api_key: Rails.application.credentials.tmdb[:key] })
+    reviews = JSON.parse(response_reviews.body, symbolize_names: true)
+  
+    movie_details = format_movie_response(details, credits, reviews)
   end
 
   private_class_method
@@ -29,5 +38,21 @@ class MovieGateway
       movies << Movie.new(movie_result)
     end
     movies
+  end
+
+  def self.format_movie_response(details, credits, reviews)
+    # require 'pry'; binding.pry
+    movie_data = {
+      id: details[:id],
+      title: details[:title],
+      release_year: details[:release_date].split("-")[0].to_i,
+      vote_average: details[:vote_average],
+      runtime: details[:runtime],
+      genres: details[:genres],
+      summary: details[:overview],
+      cast: credits[:cast].first(10),
+      total_reviews:  reviews[:results].length,
+      reviews: reviews[:results].first(5)
+    }
   end
 end

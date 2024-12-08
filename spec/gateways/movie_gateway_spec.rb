@@ -14,14 +14,28 @@ RSpec.describe MovieGateway do
   end
 
   describe 'get_movie_details' do
-    xit 'gets movie details', :vcr do
-      movie = MovieGateway.get_movie_details
-      # expect(movie_details)
+    it 'gets movie details', :vcr do
+      movie_details = MovieGateway.get_movie_details(278)
+      # require 'pry'; binding.pry
+      expect(movie_details[:id]).to eq(278)
+      expect(movie_details[:title]).to eq("The Shawshank Redemption")
+      expect(movie_details[:release_year]).to eq(1994)
+      expect(movie_details[:vote_average]).to eq(8.708)
+      expect(movie_details[:runtime]).to eq(142)
+      expect(movie_details[:genres].length).to eq(2)
+      expect(movie_details[:genres][0]).to eq({:id=>18, :name=>"Drama"})
+      expect(movie_details[:genres][1]).to eq({:id=>80, :name=>"Crime"})
+      expect(movie_details[:summary]).to include("Imprisoned")
+      expect(movie_details[:cast].length).to eq(10)
+      expect(movie_details[:cast][0][:character]).to eq("Andy Dufresne")
+      expect(movie_details[:total_reviews]).to eq(16)
+      expect(movie_details[:reviews].length).to eq(5)
+      expect(movie_details[:reviews][1][:author]).to eq("John Chard")
     end
 
     xit 'returns an error for an invalid movie', :vcr do
       movie = MovieGateway.get_movie_details
-      # expect(movie_details)
+      # expect(movie)
     end
   end
 end
