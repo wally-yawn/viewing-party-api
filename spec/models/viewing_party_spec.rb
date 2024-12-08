@@ -41,7 +41,7 @@ RSpec.describe ViewingParty, type: :model do
       @user1 = User.create!(name: "Wally", username: "www1", password: "abc123")
     end
 
-    xit 'it validates party duration less than run time' do
+    it 'it validates party duration less than run time' do
       @viewing_party_params_short = {
         name: "Wally's Party!",
         start_time: "2025-02-01 10:00:00",
@@ -51,7 +51,7 @@ RSpec.describe ViewingParty, type: :model do
         host: @user1.id
       }
 
-      expect(ViewingParty.validate_viewing_party(@viewing_party_params_short)).to raise_error(TooShortError)
+      expect {ViewingParty.validate_viewing_party(@viewing_party_params_short).to raise_error(TooShortError) }
     end
 
     it 'it validates start time is before end time' do

@@ -26,8 +26,16 @@ class ViewingParty < ApplicationRecord
     validate_presence_of_required_fields(viewing_party_attributes)
     start_time = DateTime.parse(viewing_party_attributes[:start_time])
     end_time = DateTime.parse(viewing_party_attributes[:end_time])
+    
     if end_time < start_time 
       raise EndBeforeStartError, "The end time cannot be before the start time"
+    end
+
+    movie_duration = get_movie_run_time(viewing_party_attributes[:movie_id])
+    party_duration = (end_time - start_time) * 1440
+
+    if party_duration < movie_duration
+      raise TooShortError, "The party duration is less than the movie duration"
     end
   end
 
@@ -48,5 +56,9 @@ class ViewingParty < ApplicationRecord
     if !viewing_party_attributes.has_key?(:movie_title)
       raise ActionController::ParameterMissing, "movie_title is required"
     end
+  end
+
+  def self.get_movie_run_time(movie_id)
+    100
   end
 end

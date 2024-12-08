@@ -104,8 +104,21 @@ RSpec.describe "Viewing Party API" do
 
     end
 
-    xit 'it validates party duration less than run time' do
+    it 'it validates party duration less than run time' do
+      @viewing_party_body_too_short = {
+        name: "Wally's Party!",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 10:01:00",
+        movie_id: 278,
+        movie_title: "The Shawshank Redemption",
+        invitees: [@user1.id, @user2.id]
+      }
 
+      post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body_too_short, as: :json
+      expect(response.status).to eq(400)
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:error]).to eq("The party duration is less than the movie duration")
     end
 
     it 'it validates start time is before end time' do
@@ -146,7 +159,5 @@ RSpec.describe "Viewing Party API" do
     #Need tests for
 
     #run time too long
-    #end time before start time
-    #invalid users (make the party just ignore the invalid user)
   end
 end

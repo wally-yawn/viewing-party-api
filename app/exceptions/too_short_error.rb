@@ -1,0 +1,3 @@
+class TooShortError < StandardError
+  
+end

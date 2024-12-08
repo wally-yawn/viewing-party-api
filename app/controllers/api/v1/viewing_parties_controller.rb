@@ -1,7 +1,8 @@
 class Api::V1::ViewingPartiesController < ApplicationController
-  rescue_from MissingInviteesError, with: :handle_missing_parameter
-  rescue_from EndBeforeStartError, with: :handle_end_before_start
-  rescue_from ActionController::ParameterMissing, with: :handle_missing_parameter
+  rescue_from MissingInviteesError, with: :handle_exception
+  rescue_from TooShortError, with: :handle_exception
+  rescue_from EndBeforeStartError, with: :handle_exception
+  rescue_from ActionController::ParameterMissing, with: :handle_exception
 
   def create
     viewing_party_attributes = viewing_party_params.to_h
@@ -19,11 +20,7 @@ class Api::V1::ViewingPartiesController < ApplicationController
     params.permit(:name, :start_time, :end_time, :movie_id, :movie_title, :host)
   end
 
-  def handle_missing_parameter(exception)
-    render json: { error: exception.message }, status: 400
-  end
-
-  def handle_end_before_start(exception)
+  def handle_exception(exception)
     render json: { error: exception.message }, status: 400
   end
 end
