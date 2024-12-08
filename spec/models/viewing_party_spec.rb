@@ -34,4 +34,18 @@ RSpec.describe ViewingParty, type: :model do
       expect(ViewingPartyInvitee.all.length).to eq(2)
     end
   end
+
+  describe 'validate_viewing_party' do
+    xit 'it validates party duration less than run time' do
+
+    end
+
+    xit 'it validates start time is before end time' do
+
+    end
+    
+    xit 'it does not error if invitee does not exist' do
+
+    end
+  end
 end

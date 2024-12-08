@@ -19,4 +19,8 @@ class ViewingParty < ApplicationRecord
       ViewingPartyInvitee.create!(viewing_party_params)
     end
   end
+
+  def self.validate_viewing_party
+    
+  end
 end

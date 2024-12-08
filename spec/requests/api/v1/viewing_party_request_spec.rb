@@ -102,6 +102,18 @@ RSpec.describe "Viewing Party API" do
 
     end
 
+    xit 'it validates party duration less than run time' do
+
+    end
+
+    xit 'it validates start time is before end time' do
+
+    end
+    
+    xit 'it does not error if invitee does not exist' do
+
+    end
+
     #Need tests for
 
     #run time too long
