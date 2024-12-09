@@ -106,7 +106,7 @@ RSpec.describe "Users API", type: :request do
       @viewing_party1 = ViewingParty.last
     end
 
-    xit 'returns user which has not attended any parties' do
+    it 'returns user which has not attended any parties' do
       get "/api/v1/users/#{@user2.id}"
 
       expect(response).to be_successful
@@ -119,7 +119,7 @@ RSpec.describe "Users API", type: :request do
       expect(json[:data][:attributes][:viewing_parties_invited]).to eq([])
     end
 
-    xit 'returns user which has hosted and attended parties' do
+    it 'returns user which has hosted and attended parties' do
       @viewing_party_body = {
         name: "Wally's Party 2!",
         start_time: "2025-02-01 10:00:00",
@@ -139,29 +139,27 @@ RSpec.describe "Users API", type: :request do
       expect(json[:data][:type]).to eq("user")
       expect(json[:data][:attributes][:name]).to eq(@user1.name)
       expect(json[:data][:attributes][:username]).to eq(@user1.username)
-      expect(json[:data][:attributes][:viewing_parties_hosted].length).to eq([1])
-      expect(json[:data][:attributes][:viewing_parties_invited].length).to eq([2])
+      expect(json[:data][:attributes][:viewing_parties_hosted].length).to eq(1)
+      expect(json[:data][:attributes][:viewing_parties_invited].length).to eq(1)
 
       expect(json[:data][:attributes][:viewing_parties_hosted][0][:id]).to eq(@viewing_party1.id)
       expect(json[:data][:attributes][:viewing_parties_hosted][0][:name]).to eq(@viewing_party1.name)
       expect(json[:data][:attributes][:viewing_parties_hosted][0][:start_time]).to eq(@viewing_party1.start_time)
       expect(json[:data][:attributes][:viewing_parties_hosted][0][:end_time]).to eq(@viewing_party1.end_time)
       expect(json[:data][:attributes][:viewing_parties_hosted][0][:movie_id]).to eq(@viewing_party1.movie_id)
-      expect(json[:data][:attributes][:viewing_parties_hosted][0][:movie_title]).to eq(@viewing_party1.title)
-      expect(json[:data][:attributes][:viewing_parties_hosted][0][:host_id]).to eq(@viewing_party1.host_id)
+      expect(json[:data][:attributes][:viewing_parties_hosted][0][:movie_title]).to eq(@viewing_party1.movie_title)
+      expect(json[:data][:attributes][:viewing_parties_hosted][0][:host_id]).to eq(@viewing_party1.host)
 
-      expect(json[:data][:attributes][:viewing_parties_invited][1][:id]).to eq(@viewing_party2.id)
-      expect(json[:data][:attributes][:viewing_parties_invited][1][:name]).to eq(@viewing_party2.name)
-      expect(json[:data][:attributes][:viewing_parties_invited][1][:start_time]).to eq(@viewing_party2.start_time)
-      expect(json[:data][:attributes][:viewing_parties_invited][1][:end_time]).to eq(@viewing_party2.end_time)
-      expect(json[:data][:attributes][:viewing_parties_invited][1][:movie_id]).to eq(@viewing_party2.movie_id)
-      expect(json[:data][:attributes][:viewing_parties_invited][1][:movie_title]).to eq(@viewing_party2.title)
-      expect(json[:data][:attributes][:viewing_parties_invited][1][:host_id]).to eq(@viewing_party2.host_id)
+      expect(json[:data][:attributes][:viewing_parties_invited][0][:name]).to eq(@viewing_party2.name)
+      expect(json[:data][:attributes][:viewing_parties_invited][0][:start_time]).to eq(@viewing_party2.start_time)
+      expect(json[:data][:attributes][:viewing_parties_invited][0][:end_time]).to eq(@viewing_party2.end_time)
+      expect(json[:data][:attributes][:viewing_parties_invited][0][:movie_id]).to eq(@viewing_party2.movie_id)
+      expect(json[:data][:attributes][:viewing_parties_invited][0][:movie_title]).to eq(@viewing_party2.movie_title)
+      expect(json[:data][:attributes][:viewing_parties_invited][0][:host_id]).to eq(@viewing_party2.host)
     end
 
-    xit 'returns an error when the user does not exist' do
-      @user1.destroy
-      get "/api/v1/users/#{@user1.id}"
+    it 'returns an error when the user does not exist' do
+      get "/api/v1/users/9999999999999999999999"
       expect(response.status).to eq(404)
       json = JSON.parse(response.body, symbolize_names: true)
       expect(json[:error]).to eq("Invalid User ID")
