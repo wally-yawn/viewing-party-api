@@ -42,7 +42,6 @@ class MovieSerializer
   def self.format_run_time(runtime_in_minutes)
     hours = runtime_in_minutes / 60
     minutes = runtime_in_minutes % 60
-    # require 'pry'; binding.pry
     formatted_run_time = "#{hours} hours, #{minutes} minutes"
   end
 end
