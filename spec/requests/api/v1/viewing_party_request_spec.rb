@@ -223,12 +223,19 @@ RSpec.describe "Viewing Party API" do
       expect(json[:data][:attributes][:invitees][2][:username]).to eq(@user3.username)
     end
 
-    xit 'returns an error when an invalid user is passed' do
-
+    it 'returns an error when an invalid user is passed' do
+      @user3.destroy
+      put "/api/v1/viewing_parties/#{@viewing_party1.id}", params: {invitees_user_id: @user3.id }, as: :json
+      expect(response.status).to eq(422)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("User must exist")
     end
 
-    xit 'returns an error when an invalid viewing party is passed' do
-      
+    it 'returns an error when an invalid viewing party is passed' do
+      put "/api/v1/viewing_parties/999999999999", params: {invitees_user_id: @user3.id }, as: :json
+      expect(response.status).to eq(422)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:error]).to eq("Viewing party must exist")
     end
   end
 end
