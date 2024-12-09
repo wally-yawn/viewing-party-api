@@ -38,7 +38,8 @@ RSpec.describe ViewingParty, type: :model do
     end
 
     it 'returns an error when invitees are missing' do
-      expect { ViewingParty.create_viewing_party_invitees(@viewing_party1.id, [@user1.id,@user2.id]).to raise_error(EndBeforeStartError) }
+      expect { ViewingParty.create_viewing_party_invitees(@viewing_party1.id, []) }.to raise_error(MissingInviteesError)
+      expect { ViewingParty.create_viewing_party_invitees(@viewing_party1.id, nil) }.to raise_error(MissingInviteesError)
     end
   end
 

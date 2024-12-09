@@ -11,7 +11,7 @@ class ViewingParty < ApplicationRecord
   has_many :users, through: :viewing_party_invitees
 
   def self.create_viewing_party_invitees(viewing_party_id, invitees)
-    if invitees == nil
+    if invitees == nil || invitees.length == 0
       raise MissingInviteesError, "param is missing or the value is empty: invitees is required"
     end
     invitees.map do |invitee|
