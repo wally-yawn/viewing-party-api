@@ -16,7 +16,7 @@ RSpec.describe ViewingParty, type: :model do
   end
 
   describe 'create_viewing_party_invitees' do
-    it 'can create viewing party invitees from an array of invitees' do
+    before :each do
       User.destroy_all
       ViewingPartyInvitee.destroy_all
       @user1 = User.create!(name: "Wally", username: "www1", password: "abc123")
@@ -30,9 +30,15 @@ RSpec.describe ViewingParty, type: :model do
         host: @user1.id
       }
       @viewing_party1 = ViewingParty.create!(@viewing_party_params)
+    end
 
+    it 'can create viewing party invitees from an array of invitees' do
       ViewingParty.create_viewing_party_invitees(@viewing_party1.id, [@user1.id,@user2.id])
       expect(ViewingPartyInvitee.all.length).to eq(2)
+    end
+
+    it 'returns an error when invitees are missing' do
+      expect { ViewingParty.create_viewing_party_invitees(@viewing_party1.id, [@user1.id,@user2.id]).to raise_error(EndBeforeStartError) }
     end
   end
 

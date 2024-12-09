@@ -1,7 +1,5 @@
 class Api::V1::ViewingPartyInviteesController < ApplicationController
-  # rescue_from MissingInviteesError, with: :handle_exception
-  # rescue_from TooShortError, with: :handle_exception
-  # rescue_from EndBeforeStartError, with: :handle_exception
+  rescue_from MissingInviteesError, with: :handle_exception
   rescue_from ActiveRecord::RecordInvalid, with: :handle_exception
 
   def update

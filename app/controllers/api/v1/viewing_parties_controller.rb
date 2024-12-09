@@ -9,6 +9,7 @@ class Api::V1::ViewingPartiesController < ApplicationController
     viewing_party_attributes[:host] = params[:host_id]
     ViewingParty.validate_viewing_party(viewing_party_attributes)
     viewing_party = ViewingParty.create!(viewing_party_attributes)
+
     viewing_party_invitee_params = {viewing_party_id: viewing_party.id, invitees: params[:invitees]}
     ViewingParty.create_viewing_party_invitees(viewing_party.id, params[:invitees])
     render json: ViewingPartySerializer.format_viewing_party(viewing_party), status: :created
