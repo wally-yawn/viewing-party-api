@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       end
       resources :top_movies, only: :index
       post "viewing_parties/:host_id", to: "viewing_parties#create"
+      resources :viewing_parties, only: :update, controller: "viewing_party_invitees"
       resources :movies, only: :show
     end
   end
