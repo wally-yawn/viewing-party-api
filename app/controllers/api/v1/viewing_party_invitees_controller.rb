@@ -5,7 +5,7 @@ class Api::V1::ViewingPartyInviteesController < ApplicationController
   rescue_from ActionController::ParameterMissing, with: :handle_exception
 
   def update
-    attributes = {user_id: viewing_party_invitee_params[:invitee_user_id], viewing_party_id: params[:id]}
+    attributes = {user_id: viewing_party_invitee_params[:invitees_user_id], viewing_party_id: params[:id]}
     ViewingPartyInvitee.create!(attributes)
     render json: ViewingPartySerializer.format_viewing_party(ViewingParty.find(params[:id])), status: :created
   end
@@ -13,7 +13,7 @@ class Api::V1::ViewingPartyInviteesController < ApplicationController
   private
 
   def viewing_party_invitee_params
-    params.permit(:invitee_user_id, :id)
+    params.permit(:invitees_user_id, :id)
   end
 
   def handle_exception(exception)

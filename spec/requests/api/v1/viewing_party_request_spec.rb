@@ -203,7 +203,7 @@ RSpec.describe "Viewing Party API" do
 
     it 'adds a viewing party invitee when a valid user is passed' do
       
-      put "/api/v1/viewing_parties/#{@viewing_party1.id}", params: {invitee_user_id: @user3.id }, as: :json
+      put "/api/v1/viewing_parties/#{@viewing_party1.id}", params: {invitees_user_id: @user3.id }, as: :json
       expect(response).to have_http_status(:created)
       json = JSON.parse(response.body, symbolize_names: true)
       expect(json[:data][:type]).to eq("viewing_party")
