@@ -41,6 +41,7 @@ class ViewingParty < ApplicationRecord
 
   private
   def self.validate_presence_of_required_fields(viewing_party_attributes)
+    
     if !viewing_party_attributes.has_key?(:start_time)
       raise ActionController::ParameterMissing, "start_time is required"
     end

@@ -57,8 +57,7 @@ RSpec.describe ViewingParty, type: :model do
         movie_title: "The Shawshank Redemption",
         host: @user1.id
       }
-
-      expect {ViewingParty.validate_viewing_party(@viewing_party_params_short).to raise_error(TooShortError) }
+      expect { ViewingParty.validate_viewing_party(@viewing_party_params_short) }.to raise_error(TooShortError)
     end
 
     it 'it validates start time is before end time' do
@@ -71,7 +70,7 @@ RSpec.describe ViewingParty, type: :model do
         host: @user1.id
       }
 
-      expect { ViewingParty.validate_viewing_party(@viewing_party_params_end).to raise_error(EndBeforeStartError) }
+      expect { ViewingParty.validate_viewing_party(@viewing_party_params_end) }.to raise_error(EndBeforeStartError)
     end
 
     it 'returns an error when name is not supplied' do
@@ -82,7 +81,7 @@ RSpec.describe ViewingParty, type: :model do
         movie_title: "The Shawshank Redemption"
       }
 
-      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+      expect { ViewingParty.validate_viewing_party(@viewing_party_fail) }.to raise_error(ActionController::ParameterMissing)
     end
 
     it 'returns an error when start_time is not supplied' do
@@ -93,7 +92,7 @@ RSpec.describe ViewingParty, type: :model do
         movie_title: "The Shawshank Redemption"
       }
 
-      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail) }.to raise_error(ActionController::ParameterMissing)
     end
 
     it 'returns an error when end_time is not supplied' do
@@ -104,7 +103,7 @@ RSpec.describe ViewingParty, type: :model do
         movie_title: "The Shawshank Redemption"
       }
 
-      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail) }.to raise_error(ActionController::ParameterMissing)
     end
 
     it 'returns an error when movie_id is not supplied' do
@@ -115,7 +114,7 @@ RSpec.describe ViewingParty, type: :model do
         movie_title: "The Shawshank Redemption"
       }
 
-      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail) }.to raise_error(ActionController::ParameterMissing)
     end
 
     it 'returns an error when movie_title is not supplied' do
@@ -126,7 +125,7 @@ RSpec.describe ViewingParty, type: :model do
         movie_id: 278
       }
 
-      expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
+      expect {ViewingParty.validate_viewing_party(@viewing_party_fail) }.to raise_error(ActionController::ParameterMissing)
     end
   end
 
