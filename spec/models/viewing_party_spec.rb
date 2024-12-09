@@ -122,4 +122,10 @@ RSpec.describe ViewingParty, type: :model do
       expect {ViewingParty.validate_viewing_party(@viewing_party_fail).to raise_error(ParameterMissing) }
     end
   end
+
+  describe 'get_movie_run_time' do
+    it 'gets the movie run time for a given movie', :vcr do
+      expect(ViewingParty.get_movie_run_time(278)).to eq(142)
+    end
+  end
 end
