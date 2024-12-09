@@ -195,7 +195,6 @@ RSpec.describe "Viewing Party API" do
         movie_id: 278,
         movie_title: "The Shawshank Redemption",
         invitees: [@user1.id, @user2.id],
-        host: @user1.id
       }
       post "/api/v1/viewing_parties/#{@user1.id}", params: @viewing_party_body, as: :json
       @viewing_party1 = ViewingParty.last
